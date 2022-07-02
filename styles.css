@@ -59,3 +59,10 @@ footer {
     margin: 10px 0;
     height: 60px;
 }
+
+/* Language: css */
+
+.input-general {
+    width: 100px;
+    height: 30px;
+}
