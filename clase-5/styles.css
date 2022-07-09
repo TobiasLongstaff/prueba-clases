@@ -1,0 +1,85 @@
+/* button:hover {
+    transform: scale(1.5);
+    transition: all ease 0.5s;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+:root {
+    --color-fuente: rgb(223, 223, 223);
+    --primario: #00bcd4;
+    --secundario: #ff9800;
+}
+
+body {
+    color: var(--color-fuente);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('https://www.muycomputer.com/wp-content/uploads/2021/06/Monterey-1.jpg');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container-app {
+    backdrop-filter: blur(5px);
+    margin: 20px;
+    border-radius: 5px;
+    background-color: rgba(16, 18, 27, 0.112);
+    height: 100vh;
+}
+
+.navegation-menu {
+    width: 240px;
+    padding: 15px;
+    box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+    height: 100%;
+}
+
+.navegation-menu span {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.img-logo {
+    width: 70px;
+    height: auto;
+}
+
+.btn-menu {
+    color: var(--color-fuente);
+    margin-top: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 7px 10px;
+    font-size: 19px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-grad {
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 30px;
+    color: var(--color-fuente);
+    background: var(--primario);
+}
+
+.btn-grad:hover {
+    background: #ff9800;
+    transition: all ease 0.2s;
+}
+
+.btn-grad:active {
+    transform: scale(1.05);
+    transition: all ease 0.1s;
+}
