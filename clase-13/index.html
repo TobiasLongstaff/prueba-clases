@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <title>App Note</title>
+</head>
+<body>
+    <nav class="navigation">
+        <button type="button" class="btn-crear" id="btn-popup">
+            <i class="uil uil-plus"></i> 
+            <span>Nueva Nota</span>
+        </button>
+        <h1>App Note</h1>
+    </nav>
+    <main class="container">
+        <div class="container-app">
+            <article class="container-card-note" id="container-notes">
+                <div class="card-nota">
+                    <header class="container-header">
+                        <div class="container-titulo">
+                            <h3>asdasdasdasda</h3>
+                            <div class="container-controles">
+                                <button class="btn-control">
+                                    <i class="uil uil-pen"></i>
+                                </button>
+                                <button class="btn-control">
+                                    <i class="uil uil-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p>Fecha: 10/10/2022</p>
+                    </header>
+                    <main>
+                        <p>asdasd</p>
+                    </main>
+                </div>
+                <div class="card-nota">
+                    <header class="container-header">
+                        <div class="container-titulo">
+                            <h3>asdasdasdasda</h3>
+                            <div class="container-controles">
+                                <button class="btn-control">
+                                    <i class="uil uil-pen"></i>
+                                </button>
+                                <button class="btn-control">
+                                    <i class="uil uil-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p>Fecha: 10/10/2022</p>
+                    </header>
+                    <main>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi eligendi quidem necessitatibus magni magnam laboriosam eos nihil facilis suscipit consectetur quo consequatur tenetur eveniet aspernatur officiis, fugit molestiae repudiandae aliquam!</p>
+                    </main>
+                </div>
+            </article>
+        </div>
+    </main>
+    <article class="overlay-popup">
+        <form class="form-notes" id="form-notes">
+            <header class="header-popup">
+                <h3>Crear Notas</h3>
+                <button class="btn-control" type="button" id="cerrar-popup">
+                    <i class="uil uil-times"></i>
+                </button>
+            </header>
+            <div>
+                <label>Titulo</label>
+                <input class="textbox-general" id="titulo" type="text" placeholder="Primerar nota" required>                
+            </div>
+            <div>
+                <label>Fecha</label>
+                <input class="textbox-general" id="fecha" type="datetime-local" required></input>
+            </div>
+            <div>
+                <label>Nota</label>
+                <textarea class="textbox-general" id="nota" cols="30" rows="10" required></textarea>                
+            </div>
+            <button type="submit" class="btn-principal">Submit</button>
+        </form>
+    </article>
+    <!-- LIBRERIA PARA ORDENAR LAS NOTAS -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="./src/scripts/script.js"></script>
+</body>
+</html>

@@ -18,10 +18,28 @@ const getWeather = async (country = 'Buenos Aires', units = 'metric') => {
         document.querySelector('#temp').innerHTML = `${Math.round(weather.current.temp)}°`
         document.querySelector('#feels-like').innerHTML = `${Math.round(weather.current.feels_like)}°`
         document.querySelector('#humidity').innerHTML = `${weather.current.humidity}%`
-        document.querySelector('#wind-speed').innerHTML = `${weather.current.wind_speed}km/h`
+        document.querySelector('#wind-speed').innerHTML = `${weather.current.wind_speed} ${units === 'metric' ? 'km/h' : 'mi/h'}`
         document.querySelector('#img-weather').src = `https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`
         document.querySelector('#img-weather').alt = `${weather.current.weather[0].description}`
         document.querySelector('#desciption-weather').innerHTML = `${weather.current.weather[0].main}`
+
+        document.querySelector('#loader').style.display = 'none'
+        document.querySelector('#app').style.opacity = 1
+
+        let template = ''
+        weather.hourly.map((hour, index) => {
+            if(index < 13) {
+            template += `
+            <div class="card-weather">
+                <div class="container-img-card">
+                    <img class="img-day-weather" src="https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png" alt="${hour.weather[0].description}"/>
+                </div>
+                <h3>${Math.round(hour.temp)}°<h3>
+                <label class="text-datails-temp">${new Date(hour.dt*1000).getHours()}:00</label>
+            </div>
+            `}
+        })
+        document.querySelector('#weather-forecast').innerHTML = template
         
         const rootElem = document.querySelector(':root')
         if(weather.current.weather[0].icon.includes('d')) {
@@ -45,11 +63,15 @@ const units = document.querySelector('#units')
 const inputCountries = document.querySelector('#search')
 
 units.addEventListener('change', () => {
+    document.querySelector('#loader').style.display = 'flex'
+    document.querySelector('#app').style.opacity = 0
     localStorage.setItem('units', units.value)
-    getWeather(localStorage.getItem('county'), units.value)
+    getWeather(localStorage.getItem('country'), units.value)
 })
 
 inputCountries.addEventListener('change', () => {
+    document.querySelector('#loader').style.display = 'flex'
+    document.querySelector('#app').style.opacity = 0
     localStorage.setItem('county', inputCountries.value)
     getWeather(inputCountries.value, localStorage.getItem('units'))
 })
