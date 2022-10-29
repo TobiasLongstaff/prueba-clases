@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { Count } from "./components/Count";
@@ -8,7 +8,7 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 
 function App() {
-  const [selected, setSelected] = React.useState();
+  const [selected, setSelected] = useState();
 
   let footer = <p>Please pick a day.</p>;
   if (selected) {
